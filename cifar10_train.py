@@ -7,13 +7,13 @@ import sys
 
 
 TRAIN = False if len(sys.argv)<2 else sys.argv[1]
-MIN_DEQUE = 1024*16 if TRAIN else 64
+MIN_DEQUE = 1024*2 if TRAIN else 64
 BATCH_SIZE = 64 if TRAIN else 512
 EP = 20000
 
 
-tfrecords_filename1 = 'D:\Desktop\cifar-10-batches-py\cifar10_train.tfrecords'
-tfrecords_filename2 = 'D:\Desktop\cifar-10-batches-py\cifar10_test.tfrecords'
+tfrecords_filename1 = '.\cifar10_train.tfrecords'
+tfrecords_filename2 = '.\cifar10_test.tfrecords'
 
 def read_and_decode(filename_queue):
     # 建立 TFRecordReader
